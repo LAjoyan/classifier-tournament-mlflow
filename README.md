@@ -1,5 +1,3 @@
-# classifier-tournament-mlflow
-
 # Classification Model Lab
 
 This repository will contain my experiments with classification models in machine learning.
