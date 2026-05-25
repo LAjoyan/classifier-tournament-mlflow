@@ -8,7 +8,7 @@ This project will use CSV datasets loaded with Pandas for classification experim
 
 ## What this repository will include
 
-- CSV datasets
+- Built-in datasets loaded from Scikit-learn
 - Data visualization and preparation
 - Scikit-learn Pipeline integration for robust preprocessing
 - Classification model training and evaluation
