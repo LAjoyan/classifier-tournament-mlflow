@@ -1,0 +1,29 @@
+artifact_path: file:c:/Users/Lilit/Documents/GitHub/classifier-tournament-mlflow/mlruns/3/models/m-3881285d322c45d6894bf4b14f1af0d6/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.14.0
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.12.0
+model_id: m-3881285d322c45d6894bf4b14f1af0d6
+model_size_bytes: 16050
+model_uuid: m-3881285d322c45d6894bf4b14f1af0d6
+prompts: null
+run_id: 655dbbc3eacb4179917e0a13ba921cd4
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 13]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-05-26 20:24:52.139019'
