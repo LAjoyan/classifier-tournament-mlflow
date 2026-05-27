@@ -1,6 +1,0 @@
-{
-  "accuracy_score_scaled_X_test": "accuracy_score(y_true=y_test, y_pred=preds)",
-  "f1_score_scaled_X_test": "f1_score(y_true=y_test, y_pred=preds, average='weighted')",
-  "precision_score_scaled_X_test": "precision_score(y_true=y_test, y_pred=preds, average='weighted')",
-  "recall_score_scaled_X_test": "recall_score(y_true=y_test, y_pred=preds, average='weighted')"
-}
