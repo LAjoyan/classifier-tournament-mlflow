@@ -1,16 +1,16 @@
 # Classification Model Lab
 
-This repository will contain my experiments with classification models in machine learning.
+This repository contains my experiments with classification models in machine learning.
 
 The goal of this project is to practice training different classification models, evaluate their performance, and track experiments using MLflow.
 
-This project will use CSV datasets loaded with Pandas for classification experiments.
+This project uses the built-in Wine dataset from Scikit-learn, converted to a Pandas DataFrame for classification experiments.
 
-## What this repository will include
+## What this repository includes
 
-- Built-in datasets loaded from Scikit-learn
+- Built-in datasets loaded from Scikit-learn (Wine dataset)
 - Data visualization and preparation
-- Scikit-learn Pipeline integration for robust preprocessing
+- Careful Train/Test splitting and scaling to avoid data leakage
 - Classification model training and evaluation
 - MLflow experiment tracking
 - Comparison between different classification models
@@ -22,29 +22,30 @@ This project will use CSV datasets loaded with Pandas for classification experim
 - KNN Classifier
 - SVM Classifier
 - Decision Tree Classifier
-- Random Forest Classifier
+- Random Forest Classifier 🏆
 - Gradient Boosting Classifier
-- Naive Bayes Classifier
+- Naive Bayes Classifier 🏆
 
 ## Planned Methodology
 
-To compare the models fairly and avoid data leakage, I plan to use scikit-learn Pipelines.
-
-Some models, such as Logistic Regression, Ridge Classifier, KNN, and SVM, usually benefit from feature scaling. These models will be tested with a scaler inside the pipeline.
+Some models, such as Logistic Regression, Ridge Classifier, KNN, and SVM, usually benefit from feature scaling. For these models, a `StandardScaler` is fitted only on the training data and then used to transform both the training and test sets.
 
 Tree-based models, such as Decision Tree, Random Forest, and Gradient Boosting, usually do not require feature scaling and can be tested on the prepared data directly.
 
-Naive Bayes will also be tested as a simple and fast baseline classifier.
+Gaussian Naive Bayes will also be tested as a simple and fast baseline classifier.
+
+The experiments are split into two separate Jupyter Notebooks:
+- `classification_model_comparison_with_scaling.ipynb`: Tests models that require feature scaling (Logistic Regression, Ridge, KNN, SVC).
+- `classification_model_comparison_without_scaling.ipynb`: Tests tree-based and probabilistic models that do not require scaling (Decision Tree, Random Forest, Gradient Boosting, Naive Bayes).
 
 ## Evaluation Metrics
 
-I plan to evaluate the models using classification metrics such as:
+I evaluate the models using classification metrics such as:
 
 - Accuracy
 - Precision
 - Recall
 - F1-score
-- Confusion Matrix
 
 ## Tools and libraries
 
@@ -58,9 +59,9 @@ I plan to evaluate the models using classification metrics such as:
 
 ## Tracking Experiments with MLflow
 
-This project will use MLflow to track and compare different classification models.
+This project uses MLflow to track and compare different classification models.
 
-MLflow will help me save:
+MLflow helped me save:
 
 - Model parameters
 - Evaluation metrics
@@ -71,18 +72,18 @@ MLflow will help me save:
 
 To see the model comparisons, metrics, and parameters, run:
 
-```python
+```bash
 uv run mlflow ui --port 5000
 ```
 If the server instantly crashes on Windows, run:
 
-```python
+```bash
 uv run mlflow ui --port 5000 --workers 1
 ```
 
 Then open:
 
-```python
+```bash
 http://127.0.0.1:5000
 ```
 ## Important Git Note
@@ -100,4 +101,4 @@ They should be added to .gitignore.
 
 This project is part of my learning journey toward becoming an MLOps engineer.
 
-I will use this repository to improve my understanding of classification models, experiment tracking, preventing data leakage with pipelines, and building better machine learning workflows.
+I will use this repository to improve my understanding of classification models, experiment tracking, preventing data leakage during preprocessing, and building better machine learning workflows.
