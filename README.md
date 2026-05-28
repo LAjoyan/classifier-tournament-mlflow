@@ -15,7 +15,7 @@ This project uses the built-in Wine dataset from Scikit-learn, converted to a Pa
 - MLflow experiment tracking
 - Comparison between different classification models
 
-## Classification models I plan to test
+## Classification models tested
 
 - Logistic Regression
 - Ridge Classifier
@@ -26,13 +26,13 @@ This project uses the built-in Wine dataset from Scikit-learn, converted to a Pa
 - Gradient Boosting Classifier
 - Naive Bayes Classifier 🏆
 
-## Planned Methodology
+## Methodology
 
 Some models, such as Logistic Regression, Ridge Classifier, KNN, and SVM, usually benefit from feature scaling. For these models, a `StandardScaler` is fitted only on the training data and then used to transform both the training and test sets.
 
 Tree-based models, such as Decision Tree, Random Forest, and Gradient Boosting, usually do not require feature scaling and can be tested on the prepared data directly.
 
-Gaussian Naive Bayes will also be tested as a simple and fast baseline classifier.
+Gaussian Naive Bayes is also tested as a simple and fast baseline classifier.
 
 The experiments are split into two separate Jupyter Notebooks:
 - `classification_model_comparison_with_scaling.ipynb`: Tests models that require feature scaling (Logistic Regression, Ridge, KNN, SVC).
@@ -46,6 +46,14 @@ I evaluate the models using classification metrics such as:
 - Precision
 - Recall
 - F1-score
+
+## Key Observations & Results
+
+After running the experiments and tracking the results in MLflow, I observed the following:
+
+- **Perfect Scores:** Both the **Random Forest Classifier** and **Gaussian Naive Bayes** achieved 100% (1.0) across all metrics (Accuracy, Precision, Recall, and F1-score) on the test set.
+- **Dataset Context:** While a 100% accuracy score in a real-world scenario usually indicates overfitting or data leakage, it is expected here. The built-in Scikit-learn Wine dataset is a small, clean, "toy" dataset (178 samples) with highly predictive features, making it relatively easy for these algorithms to perfectly separate the classes.
+- **Overall Performance:** Even the models that did not hit 100% performed exceptionally well, with most scoring above 96% accuracy, further proving that this specific dataset is highly separable.
 
 ## Tools and libraries
 
@@ -83,7 +91,7 @@ uv run mlflow ui --port 5000 --workers 1
 
 Then open:
 
-```bash
+```
 http://127.0.0.1:5000
 ```
 ## Important Git Note
